@@ -1,7 +1,7 @@
 import axios from 'axios';
-async function getFriends(token) {
+async function getFriends(token,amount) {
     return new Promise(res => {
-        axios.get('https://api.rec.net/api/relationships/v6/current/friends?take=50000', {
+        axios.get(`https://api.rec.net/api/relationships/v6/current/friends?take=${amount}`, {
             headers: {
                 "Authorization": token,
             }
