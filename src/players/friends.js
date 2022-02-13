@@ -6,6 +6,7 @@ async function getFriends(token) {
                 "Authorization": token,
             }
         }).then(async (rez)=> {
+//was going to be here to get more info about the friends but it took a while to load and you might get banned for API spam (maybe)
 /*              for(var i = 0; i < rez.data.length; i++) {
                 const friend = (await axios.get(`https://accounts.rec.net/account/${rez.data[i].PlayerID}`)).data
                 rez.data[i]['username'] = friend.username
