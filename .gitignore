@@ -107,3 +107,4 @@ package-lock.json
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
 .vs/RecNet.JS/v16/.suo
+config.json
