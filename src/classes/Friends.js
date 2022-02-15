@@ -14,9 +14,6 @@ export class Friend {
         this.m = Muted;
         this.ign = Ignored;
     }
-    e() {
-        
-    }
     unfriend(token) {
         axios.delete(`https://api.rec.net/api/relationships/v3/${this.pid}`,{
             headers: {

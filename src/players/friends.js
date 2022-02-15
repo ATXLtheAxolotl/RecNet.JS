@@ -1,23 +1,17 @@
 import axios from 'axios';
+import { Friend } from'../classes/Friends.js'
 async function getFriends(token,amount) {
-    return new Promise(res => {
+    return new Promise((res,rej) => {
         axios.get(`https://api.rec.net/api/relationships/v6/current/friends?take=${amount}`, {
             headers: {
                 "Authorization": token,
             }
-        }).then(async (rez)=> {
-//was going to be here to get more info about the friends but it took a while to load and you might get banned for API spam (maybe)
-/*              for(var i = 0; i < rez.data.length; i++) {
-                const friend = (await axios.get(`https://accounts.rec.net/account/${rez.data[i].PlayerID}`)).data
-                rez.data[i]['username'] = friend.username
-                rez.data[i]['profilePicture'] = friend.profileImage
-                rez.data[i]['Junior'] = friend.isJunior
-                rez.data[i]['CreationDate'] = friend.createdAt
-                if(i == rez.data.length) {
-                    res(rez.data);
-                }
-            }  */
-            res(rez.data);
+        }).then((rez)=> {
+            const friends = [];
+            for(var i = 0; i < rez.data.length; i++) {
+                friends.push(new Friend(rez.data[i].Id,rez.data[i].PlayerID,rez.data[i].RelationshipType,rez.data[i].Favorited,rez.data[i].Muted,rez.data[i].Ignored))
+            } 
+            res(friends);
         });
         
     })

@@ -1,12 +1,16 @@
 
-import {getToken,getFriends,getPlayerInfo} from './src/index.js'
+/* import {getToken,getFriends,getPlayerInfo} from './src/index.js'
 import { Friend } from './src/classes/Friends.js';
-import { email, password} from './config.json'
+import json from './config.json';
 
-(await getFriends(await getToken(email, password),5000).then(async (res)=>{
+(await getFriends(await getToken(json.email, json.password),5000).then(async (res)=>{
+    console.log(res);
         //for(var i=0; i< res.length; i++) {
-            const friend = new Friend(res[0].Id, res[0].PlayerID, res[0].RelationshipType, res[0].Favorited, res[0].Muted, res[0].Ignored)
-            console.log(await friend.getCreationDate())
+            /* const friend = 
+            console.log(await friend.getCreationDate()) */
         //}
-    })
-)
+    //})
+//) 
+
+import { players } from './src/classes/Players.js'
+console.log(await players.getPlayerByName('ATXLtheAxlotol'))

@@ -40,5 +40,4 @@ export class Player  {
     getCreationDate() {
         return new Date(this.creation);
     }
-
 }
