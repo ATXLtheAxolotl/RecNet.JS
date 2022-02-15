@@ -19,6 +19,17 @@ class Players  {
             })
         })
     }
+    searchPlayers(name) {
+        return new Promise(res => {
+            axios.get(`https://accounts.rec.net/account/search?name=${name}`).then((r)=> {
+                const players = [];
+                for(var i = 0; i < r.data.length; i++) {
+                    players.push(new Player(r.data[i].username, r.data[i].displayName, r.data[i].profileImage, r.data[i].isJunior, r.data[i].platforms, r.data[i].personalPronouns, r.data[i].identityFlags, r.data[i].createdAt));                    
+                }
+                res(players);
+            })
+        })
+    }
 }
 
 export var players = new Players();
