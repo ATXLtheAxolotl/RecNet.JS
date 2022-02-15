@@ -61,7 +61,7 @@ export class Friend {
     getExtraInfo() {
         return new Promise (res => {
             axios.get(`https://accounts.rec.net/account/${this.pid}`).then((r)=> {
-                res(new Friend(rez.data[i].Id,rez.data[i].PlayerID,rez.data[i].RelationshipType,rez.data[i].Favorited,rez.data[i].Muted,rez.data[i].Ignored));
+                res(new Player(r.data.username, r.data.displayName, r.data.profileImage, r.data.isJunior, r.data.platforms, r.data.personalPronouns, r.data.identityFlags, r.data.createdAt));
             })
         })
     }
