@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Player } from "./Player";
 export class Friend {
      rid;
      pid;
@@ -60,7 +61,7 @@ export class Friend {
     getExtraInfo() {
         return new Promise (res => {
             axios.get(`https://accounts.rec.net/account/${this.pid}`).then((r)=> {
-                res(r.data);
+                res(new Friend(rez.data[i].Id,rez.data[i].PlayerID,rez.data[i].RelationshipType,rez.data[i].Favorited,rez.data[i].Muted,rez.data[i].Ignored));
             })
         })
     }
