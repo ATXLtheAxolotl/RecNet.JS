@@ -9,8 +9,7 @@ import json from './config.json';
             console.log(await friend.getCreationDate()) 
         //}})) 
 */
- import { players } from './src/classes/Players.js'
-players.searchPlayers('ATXL').then(v => {
-    console.log('e')
-    console.log(v);
+import { players } from './src/classes/Players.js'
+await players.getPlayerByName('ATXLtheAxlotol').then(async p => {
+    console.log(await p.getBio())
 })

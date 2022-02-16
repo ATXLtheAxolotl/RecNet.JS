@@ -1,6 +1,6 @@
 import { Player } from "./Player";
 
-export var players: Players;
+export const players: Players;
 declare class Players {
     getPlayerByName(username: string): Promise<Player>;
     getPlayerByID(id: number): Promise<Player>;

@@ -1,5 +1,8 @@
+import axios from "axios";
+
 export class Player  {
     username;
+    id
     dn;
     pi;
     junior;
@@ -8,7 +11,8 @@ export class Player  {
     identity;
     creation;
 
-    constructor(Username, DisplayName, ProfileImage, isJunior, Platforms, PersonalPronouns, IdentityFlags, CreationDate) {
+    constructor(ID, Username, DisplayName, ProfileImage, isJunior, Platforms, PersonalPronouns, IdentityFlags, CreationDate) {
+        this.id = ID
         this.username = Username;
         this.dn = DisplayName;
         this.pi = ProfileImage;
@@ -39,5 +43,12 @@ export class Player  {
     }
     getCreationDate() {
         return new Date(this.creation);
+    }
+    getBio() {
+        return new Promise(res => {
+            axios.get(`https://accounts.rec.net/account/${this.id}/bio`).then((r)=> {
+                res(r.data.bio)
+            })
+        })
     }
 }
