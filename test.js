@@ -9,7 +9,15 @@ import json from './config.json';
             console.log(await friend.getCreationDate()) 
         //}})) 
 */
-import { players } from './src/classes/Players.js'
+
+
+/* import { players } from './src/classes/Players.js'
 await players.getPlayerByName('ATXLtheAxlotol').then(async p => {
     console.log(await p.getBio())
+}) */
+
+import axios from 'axios';
+
+axios.get("https://rooms.rec.net/rooms?name=jailbreak.").then((res) => {
+    console.log(res.data);
 })

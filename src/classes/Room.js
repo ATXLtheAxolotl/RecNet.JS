@@ -1,0 +1,65 @@
+class Room {
+    RoomID;
+    IsDorm;
+    MaxPlayerCalculationMode;
+    MaxPlayers;
+    CloningAllowed;
+    DisableMicAutoMute;
+    DisableRoomComments;
+    EncryptVoiceChat;
+    LoadScreenLocked;
+    Version;
+    Name;
+    Description;
+    ImageName;
+    WarningMask;
+    CustomWarning;
+    CreatorAccountId;
+    State;
+    Accessibility;
+    SupportsLevelVoting;
+    IsRRO;
+    SupportsScreens;
+    SupportsWalkVR;
+    SupportsTeleportVR;
+    SupportsVRLow;
+    SupportsQuest2;
+    SupportsMobile;
+    SupportsJuniors;
+    MinLevel;
+    CreatedAt;
+    Stats;
+
+    constructor(RoomId, IsDorm, MaxPlayerCalculationMode, MaxPlayers, CloningAllowed, DisableMicAutoMute, DisableRoomComments, EncryptVoiceChat, LoadScreenLocked, Version, Name, Description, ImageName, WarningMask, CustomWarning, CreatorAccountId, State, Accessibility, SupportsLevelVoting, IsRRO, SupportsScreens, SupportsWalkVR, SupportsTeleportVR, SupportsVRLow, SupportsQuest2, SupportsMobile, SupportsJuniors, MinLevel, CreatedAt, Stats) {
+        this.RoomID = RoomId;
+        this.IsDorm = IsDorm;
+        this.MaxPlayerCalculationMode = MaxPlayerCalculationMode;
+        this.MaxPlayers = MaxPlayers;
+        this.CloningAllowed = CloningAllowed;
+        this.DisableMicAutoMute = DisableMicAutoMute;
+        this.DisableRoomComments = DisableRoomComments;
+        this.EncryptVoiceChat = EncryptVoiceChat;
+        this.LoadScreenLocked = LoadScreenLocked;
+        this.Version = Version;
+        this.Name = Name;
+        this.Description = Description;
+        this.ImageName = ImageName;
+        this.WarningMask = WarningMask;
+        this.CustomWarning = CustomWarning;
+        this.CreatorAccountId = CreatorAccountId;
+        this.State = State;
+        this.Accessibility = Accessibility;
+        this.SupportsLevelVoting = SupportsLevelVoting;
+        this.IsRRO = IsRRO;
+        this.SupportsScreens = SupportsScreens;
+        this.SupportsWalkVR = SupportsWalkVR;
+        this.SupportsTeleportVR = SupportsTeleportVR;
+        this.SupportsVRLow = SupportsVRLow;
+        this.SupportsQuest2 = SupportsQuest2;
+        this.SupportsMobile = SupportsMobile;
+        this.SupportsJuniors = SupportsJuniors;
+        this.MinLevel = MinLevel;
+        this.CreatedAt = CreatedAt;
+        this.Stats = Stats;
+    }
+}
