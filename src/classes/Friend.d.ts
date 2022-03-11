@@ -1,23 +1,19 @@
-import { Player } from './Player'
+import { Player } from './Player';
 export class Friend {
-    constructor(RelationshipID: number, PlayerID: number, RelationshipType: number, Favorited: number, Muted: number, Ignored: number);
-    rid: number;
-    pid: number;
-    rtype: number;
-    fav: number;
-    m: number;
-    ign: number;
+    constructor(RelationshipID: any, PlayerID: any, RelationshipType: any, Favorited: any, Muted: any, Ignored: any);
+    RelationshipID: any;
+    PlayerID: any;
+    RelationshipType: any;
+    Favorited: any;
+    Muted: any;
+    Ignored: any;
     unfriend(token: string): void;
     sendFriendRequest(token: string): void;
-    isIgnored(): boolean;
-    isMuted(): boolean;
-    getPlayerID(): number;
-    getRelationshipID(): number;
     getUsername(): Promise<string>;
     getDisplayName(): Promise<string>;
     isJunior(): Promise<boolean>;
     getCreationDate(): Promise<Date>;
-    getProfilePictureResourceName(): Promise<string>;
-    getExtraInfo(): Player;
+    getProfilePictureResourceName(): Promise<any>;
+    getPlayer(): Promise<Player>;
 }
-//# sourceMappingURL=Friends.d.ts.map
+//# sourceMappingURL=Friend.d.ts.map

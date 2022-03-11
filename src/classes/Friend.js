@@ -1,19 +1,19 @@
 import axios from "axios";
 import { Player } from "./Player";
 export class Friend {
-     rid;
-     pid;
-     rtype;
-     fav;
-     m;
-     ign;
+    RelationshipID;
+    PlayerID;
+    RelationshipType;
+    Favorited;
+    Muted;
+    Ignored;
     constructor(RelationshipID, PlayerID, RelationshipType, Favorited, Muted, Ignored) {
-        this.rid = RelationshipID;
-        this.pid = PlayerID;
-        this.rtype = RelationshipType;
-        this.fav = Favorited;
-        this.m = Muted;
-        this.ign = Ignored;
+        this.RelationshipID = RelationshipID;
+        this.PlayerID = PlayerID;
+        this.RelationshipType = RelationshipType;
+        this.Favorited = Favorited;
+        this.Muted = Muted;
+        this.Ignored = Ignored;
     }
     unfriend(token) {
         axios.delete(`https://api.rec.net/api/relationships/v3/${this.pid}`,{
@@ -29,36 +29,22 @@ export class Friend {
             }
         })
     }
-    isIgnored() {
-        if(this.ign > 0) return true;
-        else return false;
-    }
-    isMuted() {
-        if(this.m > 0) return true;
-        else return false;
-    }
-    getPlayerID() {
-        return this.pid
-    }
-    getRelationshipID() {
-        return this.rid
-    }
     async getUsername() {
-        return (await this.getExtraInfo()).username
+        return (await this.getPlayer()).username
     }
     async getDisplayName() {
-        return (await this.getExtraInfo()).displayName
+        return (await this.getPlayer()).displayName
     }
     async isJunior() {
-        return (await this.getExtraInfo()).isJunior
+        return (await this.getPlayer()).isJunior
     }
     async getCreationDate() {
-        return new Date((await this.getExtraInfo()).createdAt)
+        return new Date((await this.getPlayer()).createdAt)
     }
     async getProfilePictureResourceName() {
-        return (await this.getExtraInfo()).profileImage
+        return (await this.getPlayer()).profileImage
     }
-    getExtraInfo() {
+    getPlayer() {
         return new Promise (res => {
             axios.get(`https://accounts.rec.net/account/${this.pid}`).then((r)=> {
                 res(new Player(r.data.accountId, r.data.username, r.data.displayName, r.data.profileImage, r.data.isJunior, r.data.platforms, r.data.personalPronouns, r.data.identityFlags, r.data.createdAt));

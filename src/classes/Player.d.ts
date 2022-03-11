@@ -1,20 +1,14 @@
 export class Player {
-    constructor(Username: string, DisplayName: string, ProfileImage: string, isJunior: string, Platforms: string, PersonalPronouns: string, IdentityFlags: string, CreationDate: string);
-    username: string;
-    dn: string;
-    pi: string;
-    junior: boolean;
-    platform: number;
-    pronouns: number;
-    identity: number;
-    creation: Date;
-    getUsername(): string;
-    getDisplayName(): string;
-    getProfilePictureResourceName(): string;
-    isJunior(): boolean;
-    getPlatform(): number;
-    getIdentity(): number;
-    getCreationDate(): Date;
+    constructor(ID: number, Username: string, DisplayName: string, ProfileImage: string, isJunior: boolean, Platforms: number, PersonalPronouns: number, IdentityFlags: number, CreationDate: string);
+    Username: string;
+    ID: number;
+    DisplayName: string;
+    ProfileImage: string;
+    isJunior: boolean;
+    Platforms: number;
+    PersonalPronouns: number;
+    IdentityFlags: number;
+    CreationDate: Date;
     getBio(): Promise<string>;
 }
 //# sourceMappingURL=Player.d.ts.map
