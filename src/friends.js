@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Friend } from'../classes/Friend.js'
+import { Friend } from'./Friend.js'
 async function getFriends(token,amount) {
     return new Promise((res,rej) => {
         axios.get(`https://api.rec.net/api/relationships/v6/current/friends?take=${amount}`, {

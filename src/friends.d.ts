@@ -1,4 +1,4 @@
-import { Friend } from'../classes/Friend.js'
+import { Friend } from'./Friend.js'
 
 export default getFriends;
 declare function getFriends(token: string, amount: number): Promise<Friend[]>;

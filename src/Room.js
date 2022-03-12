@@ -1,4 +1,7 @@
-class Room {
+import axios from "axios";
+import { Player } from './Player.js'
+
+export class Room {
     RoomID;
     IsDorm;
     MaxPlayerCalculationMode;
@@ -59,7 +62,24 @@ class Room {
         this.SupportsMobile = SupportsMobile;
         this.SupportsJuniors = SupportsJuniors;
         this.MinLevel = MinLevel;
-        this.CreatedAt = CreatedAt;
+        this.CreatedAt = new Date(CreatedAt);
         this.Stats = Stats;
+    }
+
+    getCreator() {
+        return new Promise (res => {
+            axios.get(`https://accounts.rec.net/account/${this.CreatorAccountId}`).then((r)=> {
+                res(new Player(r.data.accountId, r.data.username, r.data.displayName, r.data.profileImage, r.data.isJunior, r.data.platforms, r.data.personalPronouns, r.data.identityFlags, r.data.createdAt));
+            })
+        })
+    }
+    getImage() {
+        return new Promise (res => {
+            axios.get(`https://img.rec.net/${this.ImageName}`, {
+                responseType: 'arraybuffer'
+              }).then((r)=> {
+                res(Buffer.from(r.data, 'binary').toString('base64'));
+            })
+        })
     }
 }

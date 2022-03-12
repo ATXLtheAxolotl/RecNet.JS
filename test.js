@@ -1,4 +1,4 @@
-
+/* 
 import {getToken,getFriends} from './src/index.js'
 import json from './config.json';
 
@@ -9,7 +9,7 @@ import json from './config.json';
         //}})) 
 
 
-}))
+})) */
 /* import { players } from './src/classes/Players.js'
 await players.getPlayerByName('ATXLtheAxlotol').then(async p => {
     console.log(await p.getBio())
@@ -19,4 +19,9 @@ await players.getPlayerByName('ATXLtheAxlotol').then(async p => {
 
 axios.get("https://rooms.rec.net/rooms?name=jailbreak.").then((res) => {
     console.log(res.data);
-}) */
+})  */
+
+import { rooms } from './src/Rooms.js'
+rooms.getRoomByName('UnknownArmy').then(res => {
+    res.getImage().then((image) => {console.log(image);})
+})
