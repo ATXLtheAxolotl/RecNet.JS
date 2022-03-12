@@ -27,7 +27,7 @@ class Rooms {
             })
         })
     }
-    seachRooms(name) {
+    searchRooms(name) {
         return new Promise(res => {
             axios.get(`https://rooms.rec.net/rooms/search?query=${name}`).then((r)=> {
                 const rooms = [];
@@ -38,7 +38,7 @@ class Rooms {
             })
         })
     }
-    seachRooms(name,amount) {
+    searchRooms(name,amount) {
         return new Promise(res => {
             axios.get(`https://rooms.rec.net/rooms/search?query=${name}&take=${amount}`).then((r)=> {
                 const rooms = [];

@@ -10,10 +10,10 @@ import json from './config.json';
 
 
 })) */
-/* import { players } from './src/classes/Players.js'
+/* import { players } from './src/Players.js'
 await players.getPlayerByName('ATXLtheAxlotol').then(async p => {
-    console.log(await p.getBio())
-}) */
+    console.log(await p.getImage())
+})  */
 
 /* import axios from 'axios';
 
@@ -23,5 +23,6 @@ axios.get("https://rooms.rec.net/rooms?name=jailbreak.").then((res) => {
 
 import { rooms } from './src/Rooms.js'
 rooms.getRoomByName('UnknownArmy').then(res => {
-    res.getImage().then((image) => {console.log(image);})
-})
+    console.log(res);
+    /* res.getImage().then((image) => {console.log(image);}) */
+}) 

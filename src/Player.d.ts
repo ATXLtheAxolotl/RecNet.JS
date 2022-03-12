@@ -10,5 +10,5 @@ export class Player {
     IdentityFlags: number;
     CreationDate: Date;
     getBio(): Promise<string>;
+    getImage(): Promise<string>;
 }
-//# sourceMappingURL=Player.d.ts.map

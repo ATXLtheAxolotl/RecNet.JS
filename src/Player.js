@@ -30,4 +30,14 @@ export class Player  {
             })
         })
     }
+
+    getImage() {
+        return new Promise (res => {
+            axios.get(`https://img.rec.net/${this.ProfileImage}`, {
+                responseType: 'arraybuffer'
+              }).then((r)=> {
+                res(Buffer.from(r.data, 'binary').toString('base64'));
+            })
+        })
+    }
 }
