@@ -21,8 +21,7 @@ axios.get("https://rooms.rec.net/rooms?name=jailbreak.").then((res) => {
     console.log(res.data);
 })  */
 
-import { rooms } from './src/Rooms.js'
-rooms.getRoomByName('UnknownArmy').then(res => {
-    console.log(res);
-    /* res.getImage().then((image) => {console.log(image);}) */
-}) 
+import { rooms, players, friends } from './src/index.js'
+//rooms.getRoomByName('UknownArmy').then((res) => console.log(res))
+players.getPlayerByID('1').then(async (res) => console.log(await res.getImage()))
+friends

@@ -13,7 +13,7 @@ class Rooms {
         return new Promise(res => {
             axios.get(`https://rooms.rec.net/rooms?name=${name}`).then((r)=> {
                 res(new Room(r.data.RoomId, r.data.IsDorm, r.data.MaxPlayerCalculationMode, r.data.MaxPlayers, r.data.CloningAllowed, r.data.DisableMicAutoMute, r.data.DisableRoomComments, r.data.EncryptVoiceChat, r.data.LoadScreenLocked, r.data.Version, r.data.Name, r.data.Description, r.data.ImageName, r.data.WarningMask, r.data.CustomWarning, r.data.CreatorAccountId, r.data.State, r.data.Accessibility, r.SupportsLevelVoting, r.data.IsRRO, r.data.SupportsScreens, r.data.SupportsWalkVR, r.data.SupportsTeleportVR, r.data.SupportsVRLow, r.data.SupportsQuest2, r.data.SupportsMobile, r.data.SupportsJuniors, r.data.MinLevel, r.data.CreatedAt, r.data.Stats))
-            })
+            }).catch(() => res(null))
         })
     }
     getRoomsByOwner(OwnerId) {
@@ -35,7 +35,7 @@ class Rooms {
                     rooms.push(new Room(r.data.Results[i].RoomId, r.data.Results[i].IsDorm, r.data.Results[i].MaxPlayerCalculationMode, r.data.Results[i].MaxPlayers, r.data.Results[i].CloningAllowed, r.data.Results[i].DisableMicAutoMute, r.data.Results[i].DisableRoomComments, r.data.Results[i].EncryptVoiceChat, r.data.Results[i].LoadScreenLocked, r.data.Results[i].Version, r.data.Results[i].Name, r.data.Results[i].Description, r.data.Results[i].ImageName, r.data.Results[i].WarningMask, r.data.Results[i].CustomWarning, r.data.Results[i].CreatorAccountId, r.data.Results[i].State, r.data.Results[i].Accessibility, r.SupportsLevelVoting, r.data.Results[i].IsRRO, r.data.Results[i].SupportsScreens, r.data.Results[i].SupportsWalkVR, r.data.Results[i].SupportsTeleportVR, r.data.Results[i].SupportsVRLow, r.data.Results[i].SupportsQuest2, r.data.Results[i].SupportsMobile, r.data.Results[i].SupportsJuniors, r.data.Results[i].MinLevel, r.data.Results[i].CreatedAt, r.data.Results[i].Stats))
                 } 
                 res(rooms);
-            })
+            }).catch(() => res(null))
         })
     }
     searchRooms(name,amount) {
@@ -46,7 +46,7 @@ class Rooms {
                     rooms.push(new Room(r.data.Results[i].RoomId, r.data.Results[i].IsDorm, r.data.Results[i].MaxPlayerCalculationMode, r.data.Results[i].MaxPlayers, r.data.Results[i].CloningAllowed, r.data.Results[i].DisableMicAutoMute, r.data.Results[i].DisableRoomComments, r.data.Results[i].EncryptVoiceChat, r.data.Results[i].LoadScreenLocked, r.data.Results[i].Version, r.data.Results[i].Name, r.data.Results[i].Description, r.data.Results[i].ImageName, r.data.Results[i].WarningMask, r.data.Results[i].CustomWarning, r.data.Results[i].CreatorAccountId, r.data.Results[i].State, r.data.Results[i].Accessibility, r.SupportsLevelVoting, r.data.Results[i].IsRRO, r.data.Results[i].SupportsScreens, r.data.Results[i].SupportsWalkVR, r.data.Results[i].SupportsTeleportVR, r.data.Results[i].SupportsVRLow, r.data.Results[i].SupportsQuest2, r.data.Results[i].SupportsMobile, r.data.Results[i].SupportsJuniors, r.data.Results[i].MinLevel, r.data.Results[i].CreatedAt, r.data.Results[i].Stats))
                 } 
                 res(rooms);
-            })
+            }).catch(() => res(null))
         })
     }
 }

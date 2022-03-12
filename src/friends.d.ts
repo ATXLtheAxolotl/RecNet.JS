@@ -1,5 +1,6 @@
-import { Friend } from'./Friend.js'
-
-export default getFriends;
-declare function getFriends(token: string, amount: number): Promise<Friend[]>;
-//# sourceMappingURL=friends.d.ts.map
+import { Friend } from './Friend.js'
+export const friends: Friends;
+declare class Friends {
+    getFriends(token: string): Promise<Friend[]>;
+    getFriends(token: string, amount: number): Promise<Friend[]>;
+}

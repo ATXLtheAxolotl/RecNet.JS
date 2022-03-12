@@ -25,7 +25,7 @@ export class Player  {
 
     getBio() {
         return new Promise(res => {
-            axios.get(`https://accounts.rec.net/account/${this.id}/bio`).then((r)=> {
+            axios.get(`https://accounts.rec.net/account/${this.ID}/bio`).then((r)=> {
                 res(r.data.bio)
             })
         })

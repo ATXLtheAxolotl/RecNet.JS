@@ -24,9 +24,11 @@ class Players  {
             axios.get(`https://accounts.rec.net/account/search?name=${name}`).then((r)=> {
                 const players = [];
                 for(var i = 0; i < r.data.length; i++) {
-                    players.push(new Player(r.data.accountId, r.data[i].username, r.data[i].displayName, r.data[i].profileImage, r.data[i].isJunior, r.data[i].platforms, r.data[i].personalPronouns, r.data[i].identityFlags, r.data[i].createdAt));                    
+                    players.push(new Player(r.data.accountId, r.data[i].username, r.data[i].DisplayName, r.data[i].ProfileImage, r.data[i].isJunior, r.data[i].platforms, r.data[i].personalPronouns, r.data[i].identityFlags, r.data[i].createdAt));                    
                 }
                 res(players);
+            }).catch(()=>{
+                res([]);
             })
         })
     }

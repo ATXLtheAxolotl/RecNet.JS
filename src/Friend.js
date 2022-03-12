@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Player } from "./Player";
+import { Player } from "./Player.js";
 export class Friend {
     RelationshipID;
     PlayerID;
