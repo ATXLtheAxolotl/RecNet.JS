@@ -2,11 +2,15 @@
   "name": "recnetjs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./package/index.js",
   "scripts": {
     "typescript": "tsc"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ATXLtheAxolotl/RecNet.JS.git"
+  },
+  "author": "BelugaTheAxolotl#2134 || https://discord.com/users/566770844286844953",
   "type": "module",
   "license": "MIT",
   "dependencies": {
