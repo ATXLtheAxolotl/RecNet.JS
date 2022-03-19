@@ -15,8 +15,8 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.25.0",
-    "chalk": "^5.0.0",
-    "python-shell": "^3.0.1"
+    "axios-cookiejar-support": "^2.0.4",
+    "tough-cookie": "^4.0.0"
   },
   "devDependencies": {
     "typescript": "^4.5.5"
