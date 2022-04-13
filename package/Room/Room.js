@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Player } from './Player.js'
+import { Player } from './Player/Player.js'
 
 export class Room {
     RoomID;

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Friend } from'./Friend.js'
 
 
-class Friends {
+class FriendManager {
     async getFriends(token) {
         return new Promise((res,rej) => {
             axios.get('https://api.rec.net/api/relationships/v6/current/friends', {
@@ -37,4 +37,4 @@ class Friends {
     }
 }
 
-export const friends = new Friends();
+export const friends = new FriendManager();
