@@ -31,7 +31,7 @@ export class Room {
     SupportsJuniors: boolean;
     MinLevel: number;
     CreatedAt: Date;
-    Stats: { CheerCount:number, FavoriteCount:number, VisitorCount:number, VisitCount:number };
+    Stats: { CheerCount: number, FavoriteCount: number, VisitorCount: number, VisitCount: number };
     getCreator(): Promise<Player>;
     getImage(): Promise<string>;
 }

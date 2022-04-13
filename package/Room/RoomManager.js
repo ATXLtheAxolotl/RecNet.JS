@@ -1,7 +1,7 @@
 import { Room } from './Room.js';
 import axios from 'axios';
 
-class RoomManager {
+export class RoomManager {
     getRoomById(id) {
         return new Promise(res => {
             axios.get(`https://rooms.rec.net/rooms/${id}`).then((r)=> {
@@ -50,5 +50,3 @@ class RoomManager {
         })
     }
 }
-
-export const rooms = new RoomManager();

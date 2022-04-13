@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Event } from './Event.js'
-class EventManager {
+export class EventManager {
     getRecentEvents() {
         return new Promise((rez) => {
             axios.get('https://api.rec.net/api/playerevents/v1').then(res => {
@@ -31,4 +31,3 @@ class EventManager {
         })
     }
 }
-export const events = new EventManager();

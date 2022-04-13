@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Player } from './Player.js'
-class PlayerManager  {
+export class PlayerManager  {
     getPlayerByName(username) {
         return new Promise(res => {
             axios.get(`https://accounts.rec.net/account?username=${username}`).then((r)=> {
@@ -33,5 +33,3 @@ class PlayerManager  {
         })
     }
 }
-
-export const players = new PlayerManager();
